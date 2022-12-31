@@ -116,14 +116,17 @@ struct ARViewController: UIViewRepresentable {
         case 0:
             let arAnchor  = try! Experience.loadEyes()
             uiView.scene.anchors.append(arAnchor)
+            arAnchor.scene?.anchors.removeAll()
             break
         case 1:
             let arAnchor  = try! Experience.loadGlasses()
             uiView.scene.anchors.append(arAnchor)
+            arAnchor.scene?.anchors.removeAll()
             break
         case 2:
             let arAnchor  = try! Experience.loadMustache()
             uiView.scene.anchors.append(arAnchor)
+            arAnchor.scene?.anchors.removeAll()
             break
         default:
             break
