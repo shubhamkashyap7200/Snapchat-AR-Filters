@@ -91,20 +91,45 @@ struct ARViewController: UIViewRepresentable {
     @Binding var propId: Int
     
     func makeUIView(context: Context) -> ARView {
-        // Configuration Intialisation
-        
-        let arConfiguration = ARFaceTrackingConfiguration()
-        
-        // Session Intialisation
-        arView.session.run(arConfiguration, options: [.resetTracking, .removeExistingAnchors])
-        
         arView = ARView(frame: .zero)
         return arView
         
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        configureARExperience(uiView: uiView)
+        switchingMultipleScenes(uiView: uiView)
+    }
     
+    
+    // MARK: - Helper Functions
+    func configureARExperience(uiView: ARView) {
+        // Configuration Intialisation
+        let arConfiguration = ARFaceTrackingConfiguration()
+        
+        // Session Intialisation
+        uiView.session.run(arConfiguration, options: [.resetTracking, .removeExistingAnchors])
+    }
+    
+    func switchingMultipleScenes(uiView: ARView) {
+        switch propId {
+        case 0:
+            let arAnchor  = try! Experience.loadEyes()
+            uiView.scene.anchors.append(arAnchor)
+            break
+        case 1:
+            let arAnchor  = try! Experience.loadGlasses()
+            uiView.scene.anchors.append(arAnchor)
+            break
+        case 2:
+            let arAnchor  = try! Experience.loadMustache()
+            uiView.scene.anchors.append(arAnchor)
+            break
+        default:
+            break
+        }
+    }
+
 }
 
 #if DEBUG
