@@ -269,21 +269,21 @@
               "title" : "Eyes",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99996274709701538,
-                  -1.9263239892097772e-08,
-                  -0.0086336657404899597,
+                  0.73464459180831909,
+                  -1.9364263081911304e-08,
+                  -0.67845213413238525,
                   0,
-                  -0.0013528062263503671,
-                  0.98764866590499878,
-                  -0.15667887032032013,
+                  -0.11096265912055969,
+                  0.98653459548950195,
+                  -0.1201530247926712,
                   0,
-                  0.0085269790142774582,
-                  0.15668474137783051,
-                  0.98761188983917236,
+                  0.66931647062301636,
+                  0.1635526567697525,
+                  0.72475242614746094,
                   0,
-                  0.093393154442310333,
-                  0.11385925859212875,
-                  0.74961811304092407,
+                  0.55824500322341919,
+                  0.11884865164756775,
+                  0.52028763294219971,
                   1
                 ],
                 "sceneTransform" : [
@@ -881,6 +881,13 @@
                             "typeName" : "UUID",
                             "value" : "3C0072E2-3FF4-4F86-A347-920238481C5C"
                           }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "jaw"
+                          }
                         ]
                       ]
                     },
@@ -988,6 +995,13 @@
                             "typeName" : "UUID",
                             "value" : "A26491A7-1769-4C89-B4AE-A62D9EAF2E22"
                           }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "eyeLidRight"
+                          }
                         ]
                       ]
                     },
@@ -1015,6 +1029,80 @@
                   "7E7F5310-F5DC-4B98-8915-4A69178FA710" : null,
                   "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
                   "8B4E5263-E158-451C-BC2D-9289AF0DAA86" : null,
+                  "17FB799F-17F9-4723-965C-0CD7041AB778" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "includeSceneScaling",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "subpath",
+                          {
+                            "typeName" : "String",
+                            "value" : ""
+                          }
+                        ],
+                        [
+                          "url",
+                          {
+                            "typeName" : "String",
+                            "value" : "model:d820c309dfab12e6df7ef06b708a2e9b\/RobotEye.usdz"
+                          }
+                        ],
+                        [
+                          "withDescendants",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ]
+                      ],
+                      "factory" : {
+                        "identifier" : "com.apple.af.FileImportAssetFactory",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "B42B78EC-D028-48E4-978F-A070F7546DF2"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "eyeSocketRight"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        -0.039817027747631073,
+                        0.074584394693374634,
+                        -0.028969917446374893,
+                        1
+                      ]
+                    }
+                  },
                   "20B81E84-7F7C-406C-93AD-CEB44E6EE79D" : null,
                   "55F34E3E-6CD6-44A1-8F41-CCAC2683CB91" : null,
                   "091C22D6-F265-42A0-A4B8-D84571C5BFFD" : null,
@@ -1102,6 +1190,13 @@
                             "typeName" : "UUID",
                             "value" : "4C2A2023-4D37-4DD3-9AAE-6BDCD1223CF8"
                           }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "craniumHead"
+                          }
                         ]
                       ]
                     },
@@ -1128,82 +1223,43 @@
                   },
                   "439A799D-FE86-4AC5-B569-C8165A952D34" : null,
                   "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
-                  "5150CBAA-40B4-42E4-91AA-B05488824D29" : {
+                  "4724A416-E3D0-4D97-BC4A-165BC1A34344" : {
                     "overrides" : {
                       "children" : {
-                        "7E7F5310-F5DC-4B98-8915-4A69178FA710" : {
+                        "USDScene" : {
                           "overrides" : {
-                            "children" : {
-                              "USDScene" : {
-                                "overrides" : {
-                                  "arguments" : [
-                                    [
-                                      "includeSceneScaling",
-                                      {
-                                        "typeName" : "Bool",
-                                        "value" : false
-                                      }
-                                    ],
-                                    [
-                                      "subpath",
-                                      {
-                                        "typeName" : "String",
-                                        "value" : ""
-                                      }
-                                    ],
-                                    [
-                                      "url",
-                                      {
-                                        "typeName" : "String",
-                                        "value" : "model:daf935158ff2158af2ab58cb7049e364\/RobotEyeLid.usdz"
-                                      }
-                                    ],
-                                    [
-                                      "withDescendants",
-                                      {
-                                        "typeName" : "Bool",
-                                        "value" : true
-                                      }
-                                    ]
-                                  ],
-                                  "factory" : {
-                                    "identifier" : "com.apple.af.FileImportAssetFactory",
-                                    "version" : "0.0"
-                                  },
-                                  "runtimeAttributes" : [
-                                    [
-                                      "RuntimeIdentifier",
-                                      {
-                                        "typeName" : "UUID",
-                                        "value" : "1C1FDB0B-8086-4EB7-90C5-BC786D3F9603"
-                                      }
-                                    ]
-                                  ]
-                                },
-                                "transform" : {
-                                  "matrix" : [
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1
-                                  ]
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
                                 }
-                              }
-                            },
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:daf935158ff2158af2ab58cb7049e364\/RobotEyeLid.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
                             "factory" : {
-                              "identifier" : "com.apple.af.Group",
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
                               "version" : "0.0"
                             },
                             "runtimeAttributes" : [
@@ -1211,7 +1267,7 @@
                                 "RuntimeIdentifier",
                                 {
                                   "typeName" : "UUID",
-                                  "value" : "599463D3-E4C7-4397-AD73-8F06188D2DBC"
+                                  "value" : "1C1FDB0B-8086-4EB7-90C5-BC786D3F9603"
                                 }
                               ]
                             ]
@@ -1230,115 +1286,9 @@
                               0,
                               1,
                               0,
-                              -7.4505805969238281e-09,
-                              0.024186491966247559,
-                              0,
-                              1
-                            ]
-                          }
-                        },
-                        "A6D10765-187F-4794-84C2-67E5F442472B" : {
-                          "overrides" : {
-                            "children" : {
-                              "USDScene" : {
-                                "overrides" : {
-                                  "arguments" : [
-                                    [
-                                      "includeSceneScaling",
-                                      {
-                                        "typeName" : "Bool",
-                                        "value" : false
-                                      }
-                                    ],
-                                    [
-                                      "subpath",
-                                      {
-                                        "typeName" : "String",
-                                        "value" : ""
-                                      }
-                                    ],
-                                    [
-                                      "url",
-                                      {
-                                        "typeName" : "String",
-                                        "value" : "model:d820c309dfab12e6df7ef06b708a2e9b\/RobotEye.usdz"
-                                      }
-                                    ],
-                                    [
-                                      "withDescendants",
-                                      {
-                                        "typeName" : "Bool",
-                                        "value" : true
-                                      }
-                                    ]
-                                  ],
-                                  "factory" : {
-                                    "identifier" : "com.apple.af.FileImportAssetFactory",
-                                    "version" : "0.0"
-                                  },
-                                  "runtimeAttributes" : [
-                                    [
-                                      "RuntimeIdentifier",
-                                      {
-                                        "typeName" : "UUID",
-                                        "value" : "EA6154D9-A930-4509-9C90-59270DEA1129"
-                                      }
-                                    ]
-                                  ]
-                                },
-                                "transform" : {
-                                  "matrix" : [
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    1
-                                  ]
-                                }
-                              }
-                            },
-                            "factory" : {
-                              "identifier" : "com.apple.af.Group",
-                              "version" : "0.0"
-                            },
-                            "runtimeAttributes" : [
-                              [
-                                "RuntimeIdentifier",
-                                {
-                                  "typeName" : "UUID",
-                                  "value" : "F199D50B-4DD7-436A-8F2D-C313720311DD"
-                                }
-                              ]
-                            ]
-                          },
-                          "transform" : {
-                            "matrix" : [
-                              1,
                               0,
                               0,
                               0,
-                              0,
-                              1,
-                              0,
-                              0,
-                              0,
-                              0,
-                              1,
-                              0,
-                              0.0014391355216503143,
-                              0.030000023543834686,
-                              -2.4605542421340942e-06,
                               1
                             ]
                           }
@@ -1353,7 +1303,14 @@
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "06F29ABA-85C9-4E50-9C1C-ABA89EE2D208"
+                            "value" : "599463D3-E4C7-4397-AD73-8F06188D2DBC"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "eyeLidLeft"
                           }
                         ]
                       ]
@@ -1372,23 +1329,16 @@
                         0,
                         1,
                         0,
-                        0.038778021931648254,
-                        0.046893157064914703,
+                        0.038778014481067657,
+                        0.071079649031162262,
                         -0.028968840837478638,
                         1
                       ]
                     }
                   },
+                  "5150CBAA-40B4-42E4-91AA-B05488824D29" : null,
                   "6089B602-746E-4778-9466-2B3CCA830F9C" : null,
-                  "9167C60F-6B71-4977-8E8C-8B76529E8004" : null,
-                  "28782800-04D4-4BF0-985F-E47BD3CE2DD6" : null,
-                  "A6D10765-187F-4794-84C2-67E5F442472B" : null,
-                  "AF71FF24-BE45-401C-BD71-339E02D2E0D6" : null,
-                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
-                  "C4AE300B-2EC4-46AE-932A-43A09C3CD101" : null,
-                  "CA750904-717F-4668-9ECF-8EB6844EB079" : null,
-                  "D304DECD-CDCD-4D54-B8B2-474E059688AF" : null,
-                  "DF813757-E88F-4E7F-9B23-4CE39AE1BB1D" : {
+                  "08190A49-A9DE-4098-B500-BD71CE514E4B" : {
                     "overrides" : {
                       "children" : {
                         "USDScene" : {
@@ -1432,7 +1382,7 @@
                                 "RuntimeIdentifier",
                                 {
                                   "typeName" : "UUID",
-                                  "value" : "B42B78EC-D028-48E4-978F-A070F7546DF2"
+                                  "value" : "EA6154D9-A930-4509-9C90-59270DEA1129"
                                 }
                               ]
                             ]
@@ -1468,7 +1418,14 @@
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "3A4B454E-9C4F-4C7D-B3D7-54E417114DB2"
+                            "value" : "F199D50B-4DD7-436A-8F2D-C313720311DD"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "eyeSocketLeft"
                           }
                         ]
                       ]
@@ -1487,13 +1444,22 @@
                         0,
                         1,
                         0,
-                        -0.039817027747631073,
-                        0.074584394693374634,
-                        -0.028969917446374893,
+                        0.040217157453298569,
+                        0.07689318060874939,
+                        -0.028971301391720772,
                         1
                       ]
                     }
                   },
+                  "9167C60F-6B71-4977-8E8C-8B76529E8004" : null,
+                  "28782800-04D4-4BF0-985F-E47BD3CE2DD6" : null,
+                  "A6D10765-187F-4794-84C2-67E5F442472B" : null,
+                  "AF71FF24-BE45-401C-BD71-339E02D2E0D6" : null,
+                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
+                  "C4AE300B-2EC4-46AE-932A-43A09C3CD101" : null,
+                  "CA750904-717F-4668-9ECF-8EB6844EB079" : null,
+                  "D304DECD-CDCD-4D54-B8B2-474E059688AF" : null,
+                  "DF813757-E88F-4E7F-9B23-4CE39AE1BB1D" : null,
                   "E9A7134B-A1F5-44AA-A599-7C3D9504A2CC" : null,
                   "E28AA09B-C732-4A68-AD3F-56A8C25F5F25" : null,
                   "F56452D9-0B83-4797-8545-90120C1BE4C0" : null

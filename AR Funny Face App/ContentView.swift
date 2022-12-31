@@ -171,12 +171,56 @@ extension ARViewController  {
         func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
             guard let robot = robot else { return }
             
+            // Getting faceanchor
             var faceAnchor: ARFaceAnchor?
             for anchor in anchors {
                 if let a = anchor as? ARFaceAnchor {
                     faceAnchor = a
                 }
             }
+            
+            /// Storing the values of movement of facial features
+            // Eyes movement updating
+            let blendShapes = faceAnchor?.blendShapes
+            let eyeBlinkLeft = blendShapes?[.eyeBlinkLeft]?.floatValue
+            let eyeBlinkRight = blendShapes?[.eyeBlinkRight]?.floatValue
+            
+            // Brow movement updating
+            let browInnerUp = blendShapes?[.browInnerUp]?.floatValue
+            let browLeft = blendShapes?[.browDownLeft]?.floatValue
+            let browRight = blendShapes?[.browDownRight]?.floatValue
+            
+            // Jaw movement
+            let jawOpen = blendShapes?[.jawOpen]?.floatValue
+            
+            
+            /// Animating the facial features
+            // Eyes Animation
+            if let eyeBlinkLeft = eyeBlinkLeft, let browInnerUp = browInnerUp, let browLeft = browLeft {
+                robot.eyeLidLeft?.orientation = simd_mul(
+                    simd_quatf(angle: Deg2Rad(-120 + (90 * eyeBlinkLeft)), axis: [1,0,0]),
+                    simd_quatf(angle: Deg2Rad((90 * browLeft) - (30 * browInnerUp)), axis: [0,0,1])
+                )
+            }
+            
+            if let eyeBlinkRight = eyeBlinkRight, let browInnerUp = browInnerUp, let browRight = browRight {
+                robot.eyeLidLeft?.orientation = simd_mul(
+                    simd_quatf(angle: Deg2Rad(-120 + (90 * eyeBlinkRight)), axis: [1,0,0]),
+                    simd_quatf(angle: Deg2Rad((-90 * browRight) - (-30 * browInnerUp)), axis: [0,0,1])
+                )
+            }
+            
+            // Jaw Animation
+            if let jawOpen = jawOpen {
+                robot.jaw?.orientation = simd_quatf(
+                    angle: Deg2Rad(-100 + (60 * jawOpen)),
+                    axis: [1,0,0]
+                )
+            }
+        }
+        
+        func Deg2Rad(_ value: Float) -> Float {
+            return value * .pi / 180
         }
     }
 }
