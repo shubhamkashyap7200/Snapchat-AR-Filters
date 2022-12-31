@@ -93,8 +93,8 @@ struct ARViewController: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         arView = ARView(frame: .zero)
+        arView.session.delegate = context.coordinator
         return arView
-        
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
@@ -147,6 +147,7 @@ struct ARViewController: UIViewRepresentable {
         }
     }
     
+    // MARK: - Inbuilt Functions
     func makeCoordinator() -> ARDelegateHandler {
         return ARDelegateHandler(self)
     }
@@ -167,7 +168,16 @@ extension ARViewController  {
         }
         
         // MARK: - Helper Functions
-
+        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+            guard let robot = robot else { return }
+            
+            var faceAnchor: ARFaceAnchor?
+            for anchor in anchors {
+                if let a = anchor as? ARFaceAnchor {
+                    faceAnchor = a
+                }
+            }
+        }
     }
 }
 
