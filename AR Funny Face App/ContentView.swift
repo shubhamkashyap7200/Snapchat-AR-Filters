@@ -8,7 +8,7 @@
 import SwiftUI
 import RealityKit
 
-var arView: ARView!
+fileprivate var arView: ARView!
 
 struct ContentView : View {
     // MARK: - Properties
