@@ -157,7 +157,7 @@ struct ARViewController: UIViewRepresentable {
 extension ARViewController  {
     class ARDelegateHandler: NSObject, ARSessionDelegate {
         // MARK: - Properties
-
+        var isLasersDone = true
         var arViewController: ARViewController
         
         // MARK: - Lifecycle Functions
@@ -216,6 +216,20 @@ extension ARViewController  {
                     angle: Deg2Rad(-100 + (60 * jawOpen)),
                     axis: [1,0,0]
                 )
+            }
+            
+            // Lasers check
+            if (self.isLasersDone == true && jawOpen ?? 0.0 > 0.9) {
+                // 1
+                self.isLasersDone = false
+                
+                // 2 // Using the identifier
+                robot.notifications.showLasers.post()
+                
+                // 3
+                robot.actions.lasersDone.onAction = { _ in
+                    self.isLasersDone = true
+                }
             }
         }
         
