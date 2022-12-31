@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 fileprivate var arView: ARView!
 
@@ -90,15 +91,14 @@ struct ARViewController: UIViewRepresentable {
     @Binding var propId: Int
     
     func makeUIView(context: Context) -> ARView {
+        // Configuration Intialisation
+        
+        let arConfiguration = ARFaceTrackingConfiguration()
+        
+        // Session Intialisation
+        arView.session.run(arConfiguration, options: [.resetTracking, .removeExistingAnchors])
         
         arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
         return arView
         
     }
