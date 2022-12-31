@@ -10,10 +10,11 @@ import RealityKit
 import ARKit
 
 fileprivate var arView: ARView!
+fileprivate var robot: Experience.GreenRobot!
 
 struct ContentView : View {
     // MARK: - Properties
-    let sceneCount = 2
+    let sceneCount = 3
     
     @State var propId: Int = 0
     
@@ -97,12 +98,16 @@ struct ARViewController: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
+        configureAll(uiView: uiView)
+    }
+    
+    // MARK: - Helper Functions
+    func configureAll(uiView: ARView) {
+        robot = nil
         configureARExperience(uiView: uiView)
         switchingMultipleScenes(uiView: uiView)
     }
     
-    
-    // MARK: - Helper Functions
     func configureARExperience(uiView: ARView) {
         // Configuration Intialisation
         let arConfiguration = ARFaceTrackingConfiguration()
@@ -114,25 +119,56 @@ struct ARViewController: UIViewRepresentable {
     func switchingMultipleScenes(uiView: ARView) {
         switch propId {
         case 0:
+            // Eyes
             let arAnchor  = try! Experience.loadEyes()
             uiView.scene.anchors.append(arAnchor)
             arAnchor.scene?.anchors.removeAll()
             break
         case 1:
+            // Glasses
             let arAnchor  = try! Experience.loadGlasses()
             uiView.scene.anchors.append(arAnchor)
             arAnchor.scene?.anchors.removeAll()
             break
         case 2:
+            // Mustache
             let arAnchor  = try! Experience.loadMustache()
             uiView.scene.anchors.append(arAnchor)
             arAnchor.scene?.anchors.removeAll()
+            break
+        case 3:
+            // Robot
+            let arAnchor  = try! Experience.loadGreenRobot()
+            uiView.scene.anchors.append(arAnchor)
+            robot = arAnchor
             break
         default:
             break
         }
     }
+    
+    func makeCoordinator() -> ARDelegateHandler {
+        return ARDelegateHandler(self)
+    }
 
+}
+
+extension ARViewController  {
+    class ARDelegateHandler: NSObject, ARSessionDelegate {
+        // MARK: - Properties
+
+        var arViewController: ARViewController
+        
+        // MARK: - Lifecycle Functions
+
+        init(_ controller: ARViewController) {
+            self.arViewController = controller
+            super.init()
+        }
+        
+        // MARK: - Helper Functions
+
+    }
 }
 
 #if DEBUG
